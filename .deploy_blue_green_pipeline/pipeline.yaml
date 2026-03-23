@@ -1,5 +1,5 @@
 ---
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
   name: secure-app-pipeline
@@ -271,7 +271,7 @@ spec:
         - name: output
           workspace: pipeline-ws
 ---
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
   name: switch-secure-app-pipeline

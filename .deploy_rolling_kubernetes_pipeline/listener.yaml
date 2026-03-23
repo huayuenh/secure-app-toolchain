@@ -1,5 +1,5 @@
 ---
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1
 kind: TriggerTemplate
 metadata:
   name: trigger-template-secure-kube
@@ -65,7 +65,7 @@ spec:
         volumeMode: Filesystem
         accessModes:
           - ReadWriteOnce
-    - apiVersion: tekton.dev/v1beta1
+    - apiVersion: tekton.dev/v1
       kind: PipelineRun
       metadata:
         name: secure-app-$(uid)
@@ -120,14 +120,14 @@ spec:
             persistentVolumeClaim:
               claimName: secure-app-$(uid)-pvc
 ---
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1
 kind: TriggerBinding
 metadata:
   name: trigger-binding-manual
 spec:
   params:
 ---
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1
 kind: EventListener
 metadata:
   name: manual-run
@@ -138,7 +138,7 @@ spec:
       template:
         name: trigger-template-secure-kube
 ---
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1
 kind: TriggerBinding
 metadata:
   name: github-ent-commit
@@ -155,7 +155,7 @@ spec:
     - name: scm-type
       value: "github-ent"
 ---        
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1
 kind: EventListener
 metadata:
   name: github-ent-commit
@@ -166,7 +166,7 @@ spec:
       template:
         name: trigger-template-secure-kube
 ---
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1
 kind: TriggerBinding
 metadata:
   name: github-commit
@@ -183,7 +183,7 @@ spec:
     - name: scm-type
       value: "github"
 ---
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1
 kind: EventListener
 metadata:
   name: github-commit
@@ -194,7 +194,7 @@ spec:
       template:
         name: trigger-template-secure-kube
 ---
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1
 kind: TriggerBinding
 metadata:
   name: grit-or-gitlab-commit
@@ -211,7 +211,7 @@ spec:
     - name: scm-type
       value: "gitlab"
 ---
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1
 kind: EventListener
 metadata:
   name: grit-or-gitlab-commit
@@ -222,7 +222,7 @@ spec:
       template:
         name: trigger-template-secure-kube
 ---
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1
 kind: TriggerBinding
 metadata:
   name: bitbucket-commit
@@ -241,7 +241,7 @@ spec:
     - name: scm-type
       value: "bitbucket"
 ---
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1
 kind: EventListener
 metadata:
   name: bitbucket-commit

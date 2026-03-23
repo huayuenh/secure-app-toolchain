@@ -1,4 +1,4 @@
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: download-artifacts
@@ -60,7 +60,7 @@ spec:
           # task to carry out deployment steps on the target Virtual Server instance.
           cd /output           
 ---
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: execute-on-satelite
@@ -204,7 +204,7 @@ spec:
       secret:
         secretName: secure-properties        
 ---
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: publish-doi-deployrecord
