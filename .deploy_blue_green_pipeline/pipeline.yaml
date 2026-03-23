@@ -132,10 +132,8 @@ spec:
             export CLUSTER_NAMESPACE="$(params.dev-cluster-namespace)"
             export DEPLOYMENT_FILE="$(params.deployment-file)"
             export KEEP_INGRESS_CUSTOM_DOMAIN="$(params.keep-ingress-custom-domain)"
-            # pipeline build number is the doi build record id (if any)
             export SOURCE_BUILD_NUMBER=$BUILD_NUMBER
             echo "SOURCE_BUILD_NUMBER=$BUILD_NUMBER" >> build.properties
-            # For doi plugin invocation if needed
             export TOOLCHAIN_ID=$PIPELINE_TOOLCHAIN_ID
         - name: script
           value: |
@@ -176,10 +174,8 @@ spec:
             export CLUSTER_NAMESPACE="$(params.dev-cluster-namespace)"
             export DEPLOYMENT_FILE="$(params.deployment-file)"
             export KEEP_INGRESS_CUSTOM_DOMAIN="$(params.keep-ingress-custom-domain)"
-            # pipeline build number is the doi build record id (if any)
             export SOURCE_BUILD_NUMBER=$BUILD_NUMBER
             echo "SOURCE_BUILD_NUMBER=$BUILD_NUMBER" >> build.properties
-            # For doi plugin invocation if needed
             export TOOLCHAIN_ID=$PIPELINE_TOOLCHAIN_ID
             export CLUSTER_NAMESPACE="$(params.dev-cluster-namespace)"
         - name: script
@@ -213,10 +209,8 @@ spec:
             export CLUSTER_NAMESPACE="$(params.dev-cluster-namespace)"
             export DEPLOYMENT_FILE="$(params.deployment-file)"
             export KEEP_INGRESS_CUSTOM_DOMAIN="$(params.keep-ingress-custom-domain)"
-            # pipeline build number is the doi build record id (if any)
             export SOURCE_BUILD_NUMBER=$BUILD_NUMBER
             echo "SOURCE_BUILD_NUMBER=$BUILD_NUMBER" >> build.properties
-            # For doi plugin invocation if needed
             export TOOLCHAIN_ID=$PIPELINE_TOOLCHAIN_ID
         - name: script
           value: |
@@ -245,30 +239,6 @@ spec:
           value: $(params.pipeline-debug)
       workspaces:
         - name: artifacts
-          workspace: pipeline-ws
-    - name: publish-doi-deployrecord
-      taskRef:
-        name: publish-doi-deployrecord
-      runAfter: [release]
-      when:
-        - input: $(params.insights)
-          operator: in
-          values: ["draservicebroker"]
-      params:
-        - name: api
-          value: $(params.api)
-        - name: apikey
-          value: $(params.apikey)
-        - name: appname
-          value: $(params.app-name)
-        - name: inventoryrepo
-          value: $(params.inventoryRepo)
-        - name: target
-          value: 'prod'
-        - name: build_number
-          value: $(tasks.download-artifacts.results.build_number)
-      workspaces:
-        - name: output
           workspace: pipeline-ws
 ---
 apiVersion: tekton.dev/v1
@@ -362,10 +332,8 @@ spec:
             export CLUSTER_NAMESPACE="$(params.dev-cluster-namespace)"
             export DEPLOYMENT_FILE="$(params.deployment-file)"
             export KEEP_INGRESS_CUSTOM_DOMAIN="$(params.keep-ingress-custom-domain)"
-            # pipeline build number is the doi build record id (if any)
             export SOURCE_BUILD_NUMBER=$BUILD_NUMBER
             echo "SOURCE_BUILD_NUMBER=$BUILD_NUMBER" >> build.properties
-            # For doi plugin invocation if needed
             export TOOLCHAIN_ID=$PIPELINE_TOOLCHAIN_ID
         - name: script
           value: |
@@ -421,10 +389,8 @@ spec:
             export CLUSTER_NAMESPACE="$(params.dev-cluster-namespace)"
             export DEPLOYMENT_FILE="$(params.deployment-file)"
             export KEEP_INGRESS_CUSTOM_DOMAIN="$(params.keep-ingress-custom-domain)"
-            # pipeline build number is the doi build record id (if any)
             export SOURCE_BUILD_NUMBER=$BUILD_NUMBER
             echo "SOURCE_BUILD_NUMBER=$BUILD_NUMBER" >> build.properties
-            # For doi plugin invocation if needed
             export TOOLCHAIN_ID=$PIPELINE_TOOLCHAIN_ID
             export CLUSTER_NAMESPACE="$(params.dev-cluster-namespace)"
         - name: script

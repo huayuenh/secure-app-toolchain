@@ -120,8 +120,6 @@ wizard.deploymentStrategy.satellite.title: "[G'**Ｍｕｌｔｉｐｌｅ ｃｌ
 wizard.step.deploymentStrategy.title: "[G'Deployฏูİı｜]"
 wizard.optional.tools.title: "[G'Ｏｔher Toolsฏูİı｜]"
 wizard.optional.tools.longDescription: "[G'Ｔｈｅｓｅ ａｒｅ ｏｐｔｉｏnal tools that can be included in your toolchain.ฏูİı｜]"
-wizard.optional.tools.doi.title: "[G'ＤｅｖＯｐｓ Ｉｎｓｉｇhts (no configuration required)ฏูİı｜]"
-wizard.optional.tools.doi.description: "[G'ＤｅｖＯｐｓ Ｉｎｓｉｇｈｔｓ ｐｒｏｖｉｄｅｓ ｃｏｍｐｒｅｈｅｎｓｉｖｅ ｉｎｓｉｇｈｔｓ ｆrom popular continuous integration and continuous delivery tools to increase the speed and control of your application delivery.ฏูİı｜]"
 wizard.summary.title: "[G'Summaryฏูİı｜]"
 wizard.summary.success.title: "[G'Ｃｏｎｇratulationsฏูİı｜]"
 wizard.summary.success.subtitle: "[G'Ｙｏｕ ｈａｖｅ ｃｏｍｐｌｅｔｅｄ ｔｈｅ ｃｏｎｆｉｇｕｒａｔｉｏｎ ｏｆ ｙour toolchain. Click the 'Create' button below to create the toolchain with your chosen tools and settings.ฏูİı｜]"

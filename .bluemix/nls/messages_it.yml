@@ -120,8 +120,6 @@ wizard.deploymentStrategy.satellite.title: "**Più cluster via Satellite**\n\nDi
 wizard.step.deploymentStrategy.title: "Distribuisci"
 wizard.optional.tools.title: "Altri strumenti"
 wizard.optional.tools.longDescription: "Si tratta di strumenti facoltativi che possono essere inclusi nella tua toolchain."
-wizard.optional.tools.doi.title: "DevOps Insights (nessuna configurazione richiesta)"
-wizard.optional.tools.doi.description: "DevOps Insights fornisce informazioni generali sugli strumenti di integrazione e distribuzione continua per incrementare la velocità e il controllo della distribuzione dell'applicazione."
 wizard.summary.title: "Riepilogo"
 wizard.summary.success.title: "Congratulazioni"
 wizard.summary.success.subtitle: "È stata completata la configurazione della toolchain. Fare clic sul pulsante 'Crea' per creare la toolchain con gli strumenti e le impostazioni scelte."

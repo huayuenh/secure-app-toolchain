@@ -303,9 +303,6 @@ services:
             $env.template.info.hosted_region !== "" ? 'main': 'master'
           INVENTORY_BRANCH: 'master'  
         execute: false
-  devops-insights:
-    service_id: 'draservicebroker'
-
 
 form:
   pipeline:
