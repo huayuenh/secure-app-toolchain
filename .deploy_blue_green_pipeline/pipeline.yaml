@@ -49,11 +49,9 @@ spec:
     - name: inventoryRepo
       description: The variable storing git integration for the repository storing build inventory with the toolchain
     - name: deployment-strategy
-      description: kubernetes deployment-strategy 
+      description: kubernetes deployment-strategy
     - name: commons-hosted-region
       default: "https://raw.githubusercontent.com/open-toolchain/commons/master"
-    - name: insights
-      description: The variable storing DevOps Insight integration with the toolchain
   workspaces:
     - name: pipeline-ws
   tasks:

@@ -56,8 +56,6 @@ spec:
       description: Defines number of tests should be performed against canary deployment
     - name: commons-hosted-region
       default: "https://raw.githubusercontent.com/open-toolchain/commons/master"
-    - name: insights
-      description: The variable storing DevOps Insight integration with the toolchain
   workspaces:
     - name: pipeline-ws
   tasks:

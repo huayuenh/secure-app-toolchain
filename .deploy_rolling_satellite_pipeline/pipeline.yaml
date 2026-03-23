@@ -37,8 +37,6 @@ spec:
       description: kubernetes deployment-strategy 
     - name: commons-hosted-region
       default: "https://raw.githubusercontent.com/open-toolchain/commons/master"
-    - name: insights
-      description: The variable storing DevOps Insight integration with the toolchain
     - name: satellite-cluster-group
       description: Satelite Cluster Group
     - name: registry-region

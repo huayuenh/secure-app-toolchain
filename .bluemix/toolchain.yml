@@ -148,7 +148,6 @@ services:
       services:
         - repo
         - tekton-catalog-repo
-        - devops-insights
       name: 'pr-pipeline'
       type: tekton
       ui-pipeline: true
@@ -159,7 +158,6 @@ services:
           PIPELINE_REPO: pipeline-repo
           APP_REPO: repo
           API_KEY: '{{form.pipeline.parameters.api-key}}'
-          INSIGHTS: devops-insights
           APP_NAME: "{{form.pipeline.parameters.app-name}}"
           ARTIFACTORY_DOCKER_CONFIG_JSON: '{{form.artifactoryComp.parameters.docker_config_json}}'
           PRIVATE_WORKER: '{{services.privateWorker.parameters.name}}'
@@ -199,7 +197,6 @@ services:
       services:
         - repo
         - inventory-repo
-        - devops-insights
       name: 'ci-pipeline'
       ui-pipeline: true
       type: tekton
@@ -209,7 +206,6 @@ services:
         env:
           APP_REPO: repo
           APP_NAME: "{{form.pipeline.parameters.app-name}}"
-          INSIGHTS: devops-insights
           REGISTRY_REGION_ID: "{{form.pipeline.parameters.registry-region}}"
           REGISTRY_NAMESPACE: "{{form.pipeline.parameters.registry-namespace}}"
           API_KEY: "{{form.pipeline.parameters.api-key}}"
@@ -253,7 +249,6 @@ services:
       services:
         - repo
         - inventory-repo
-        - devops-insights
       name: 'cd-pipeline'
       ui-pipeline: true
       type: tekton
@@ -266,7 +261,6 @@ services:
           REGISTRY_REGION_ID: "{{form.pipeline.parameters.registry-region}}"
           REGISTRY_NAMESPACE: "{{form.pipeline.parameters.registry-namespace}}"
           API_KEY: "{{form.pipeline.parameters.api-key}}"
-          INSIGHTS: devops-insights
           PROD_REGION_ID: "{{form.pipeline.parameters.prod-region}}"
           PROD_RESOURCE_GROUP: "{{form.pipeline.parameters.prod-resource-group}}"
           PROD_CLUSTER_NAME: "{{form.pipeline.parameters.prod-cluster-name}}"
