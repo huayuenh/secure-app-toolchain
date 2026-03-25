@@ -1,5 +1,5 @@
 ---
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
   name: secure-app-pipeline
@@ -37,8 +37,6 @@ spec:
       description: kubernetes deployment-strategy 
     - name: commons-hosted-region
       default: "https://raw.githubusercontent.com/open-toolchain/commons/master"
-    - name: insights
-      description: The variable storing DevOps Insight integration with the toolchain
     - name: satellite-cluster-group
       description: Satelite Cluster Group
     - name: registry-region
@@ -145,28 +143,4 @@ spec:
           value: $(params.pipeline-debug)
       workspaces:
         - name: artifacts
-          workspace: pipeline-ws
-    - name: publish-doi-deployrecord
-      taskRef:
-        name: publish-doi-deployrecord
-      runAfter: [perform-deployment]
-      when:
-        - input: $(params.insights)
-          operator: in
-          values: ["draservicebroker"]
-      params:
-        - name: api
-          value: $(params.api)
-        - name: apikey
-          value: $(params.apikey)
-        - name: appname
-          value: $(params.app-name)
-        - name: inventoryrepo
-          value: $(params.inventoryRepo)
-        - name: target
-          value: 'prod'
-        - name: build_number
-          value: $(tasks.download-artifacts.results.build_number)
-      workspaces:
-        - name: output
           workspace: pipeline-ws
